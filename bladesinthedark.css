@@ -24,6 +24,11 @@ display:inline-block;
 width:50%;
     vertical-align:top;
 }
+ div.sheet-col100.sheet-col1002 > div.repcontrol{    
+    top: -15px !important;
+    position: relative !important;
+}
+
 .sheet-col10{display:inline-block;width:6%;margin:0;padding:0;vertical-align:top;}
 .sheet-col60{display:inline-block;width:55%;margin:0;padding:0;vertical-align:top;}
 .sheet-col40{display:inline-block;width:45%;margin:0;padding:0;vertical-align:top;}
@@ -47,6 +52,7 @@ width:50%;
     vertical-align: top;}
 .sheet-col90{display:inline-block;width:94%;margin:0;padding:0;vertical-align:top;}
 .sheet-col100{display:inline-block;width:100%;margin:0;padding:0;vertical-align:top;}
+.sheet-col1002{margin-left:5px;width:97%;}
 .sheet-fullwidth input{width:100% !important;}
 
 .sheet-bladeslogo{
@@ -259,7 +265,7 @@ input[type=checkbox],input[type=radio]   {
 }
 
 /* Left-fill Stress-teeth radios WORKING */
-input.sheet-stresstooth3[type="radio"]{
+input.sheet-stresstooth3[type="radio"],input.sheet-stresstooth3[type="checkbox"]{
     opacity:0;
      width: 8px;
 	height: 25px;
@@ -270,10 +276,10 @@ input.sheet-stresstooth3[type="radio"]{
     padding:0;
     z-index: 1;
         left: 8px;
-    top: -10px;
+top: -3px;
     margin:-8px;
 }
-input.sheet-stresstooth3[type="radio"] + span::before{
+input.sheet-stresstooth3[type="radio"] + span::before,input.sheet-stresstooth3[type="checkbox"] + span::before{
              width: 8px;
     height: 25px;
     display: inline-block;
@@ -285,24 +291,47 @@ input.sheet-stresstooth3[type="radio"] + span::before{
     cursor: pointer;
     padding: 0;
 }
-input.sheet-stresstoothlast[type="radio"] + span::before{
+input.sheet-stresstoothlast[type="radio"] + span::before,input.sheet-stresstoothlast[type="checkbox"] + span::before{
     margin-right:0px !important;
 }
 
-input.sheet-stresstooth3[type="radio"]:hover + span::before{
+input.sheet-stresstooth3[type="radio"]:hover + span::before,input.sheet-stresstooth3[type="checkbox"]:hover + span::before{
 filter: alpha(opacity=70);
 	opacity: 0.7;
 }
 
-input.sheet-stresstooth3[type="radio"]:checked ~ input.sheet-stresstooth3[type="radio"] + span::before{    
+input.sheet-stresstooth3[type="radio"]:checked ~ input.sheet-stresstooth3[type="radio"] + span::before,input.sheet-stresstooth3[type="checkbox"]:checked ~ input.sheet-stresstooth3[type="checkbox"] + span::before{    
     content: "";
     background-image:url(http://i.imgur.com/XNFdq3n.png);
 }
-input.sheet-stresstooth3[type="radio"]:checked + span::before{
+input.sheet-stresstooth3[type="radio"]:checked + span::before,input.sheet-stresstooth3[type="checkbox"]:checked + span::before{
    
     background-image:url(http://i.imgur.com/17DqQbA.png);
 
 }
+input.sheet-regulartooth3{
+        top: -9px !important;
+}
+
+input.sheet-regulartooth3:checked ~ span::before{
+    background-image:url(http://i.imgur.com/pGe2dC1.png) !important;
+}
+
+input.sheet-regulartooth3:checked + span::before,input.sheet-regulartooth3 + span::before{    
+    background-image:url(http://i.imgur.com/ZYuytKg.png) !important;
+}
+
+input.sheet-traumatooth3, input.sheet-traumatooth3 + span::before{
+    	height: 13px;
+    }
+input.sheet-traumatooth3 + span::before,input.sheet-traumatooth3:checked + span::before{
+    background-image:url(http://i.imgur.com/co4IzVF.png) !important;
+}
+input.sheet-traumatooth3:checked ~ input.sheet-traumatooth3 + span::before,input.sheet-traumazero:checked ~ input.sheet-traumatooth3 + span::before{    
+    content: "";
+     background-image:url(http://i.imgur.com/m3eW79B.png) !important;
+}
+ 
 input.sheet-zero3[type="radio"] + span::before{
           width: 10px;
     background-image:url(http://i.imgur.com/b7fMDSq.png);
@@ -317,11 +346,56 @@ input.sheet-stresszero[type="radio"]{
     top: 335px;
 
 }
+input.sheet-traumazero[type="radio"]{
+           position: absolute;
+    left: 218px;
+    top: 348px;
+}
 input.sheet-stresszero[type="radio"] + span::before,input.sheet-stresszero[type="radio"]:checked + span::before{
  position:absolute;   
         left: 80px;
-    top: 325px;
+    top: 339px;
 }
+input.sheet-traumazero[type="radio"] + span::before,input.sheet-traumazero[type="radio"]:checked + span::before{
+     position: absolute;
+    left: 209px;
+    top: 339px;
+}
+input.sheet-xpzero3[type="radio"]{
+    position: relative;
+    left: 8px;
+    }
+input.sheet-xpzero3[type="radio"] + span::before,input.sheet-xpzero3[type="radio"]:checked + span::before{
+           position: relative;
+      left: 10px;
+    top: 1px;
+    margin-left: -3px;
+     background-image:url(http://i.imgur.com/b7fMDSq.png) !important;
+}
+
+
+/* ARMOR TEETH PLACEMENT */
+.charsheet input.sheet-armortooth[type="checkbox"] {
+        left: 12px;
+    top: -9px;
+    z-index:10;
+}
+.charsheet input.sheet-armortooth[type="checkbox"] + span::before {
+          left: 12px;
+}
+.charsheet input.sheet-armortooth2[type="checkbox"] + span::before {
+        margin: 0px 0px 0px 0px;
+}
+input.sheet-stresstooth3[type="checkbox"] + span::before{
+     content: "";
+    background-image:url(http://i.imgur.com/XNFdq3n.png);
+}
+input.sheet-stresstooth3[type="checkbox"]:checked + span::before{
+     background-image:url(http://i.imgur.com/17DqQbA.png);
+}
+
+
+
 /* Left-fill Stress-teeth radios DEPRECATED */
 
 label.sheet-stresstooth2{
@@ -353,17 +427,6 @@ input.sheet-stresstooth2[type=radio]:checked + label{
 }
 
 
-label.sheet-stresstooth2.sheet-regulartooth2{
-    margin: 0;
-    background-image:url(http://i.imgur.com/ZYuytKg.png);
-}
-input.sheet-stresstooth2.sheet-regulartooth2[type=radio]:checked ~ label
-{    
- background-image:url(http://i.imgur.com/pGe2dC1.png);
-}
-input.sheet-stresstooth2.sheet-regulartooth2[type=radio]:checked + label{
-    background-image:url(http://i.imgur.com/ZYuytKg.png);
-}
 
 
 label.sheet-zero{
@@ -396,7 +459,7 @@ input.sheet-regulartooth2.sheet-stresstooth2.sheet-zero[type=radio]:checked + la
    background-image:url(http://i.imgur.com/b7fMDSq.png);
 }
 
-/* Left-filled radio Trauma radios */ 
+/* Left-filled radio Trauma radios DEPRECATED */ 
 label.sheet-stresstooth2.sheet-traumatooth2 {
 	height: 13px;
  background-image:url(http://i.imgur.com/co4IzVF.png);
@@ -494,8 +557,16 @@ input.sheet-traumatooth2.sheet-zero[type=radio]:checked + label{
 
 /* TRAUMA DETAILS */
 
-
-input.sheet-trauma-check + label {
+input.sheet-trauma-check[type="checkbox"]{
+    opacity:0;
+    display:inline-block;
+          position: absolute;
+    width: 40px;
+           height: 11px;
+    margin: 0;
+    z-index: 10;
+}
+input.sheet-trauma-check + span {
  
     display: inline;
     border: none;
@@ -511,28 +582,81 @@ input.sheet-trauma-check + label {
     text-transform: uppercase;
     position: relative;
     top: -3px;
-    left: 2px;
+           left: 2px;
+    font-family: Georgia, serif;
 }
-input.sheet-trauma-check + label::after{
+input.sheet-trauma-check + span::after{
        content: "—";
     color:black!important;
-    padding-left: 2px
-}
-input.sheet-trauma-check + label:hover{
-    color:#9c9c9c;
-}
-input.sheet-trauma-check:checked + label {
-    opacity:1 !important;
-  color: #ff0000;
-}
-input.sheet-traumarow2 + label {
-    top:-8px !important;
+    padding-left: 2px;
 }
 
-div.sheet-stress4 label:last-child::after,div.sheet-stress4 label:nth-child(8)::after{
+div.sheet-recoveryblurb.sheet-recoveryblurb2 input.sheet-trauma-check + span::after { color: #5e5e5e !important;}
+
+
+span.sheet-trauma-check.sheet-traumalast::after{
+       content: " " !important;
+    color:black!important;
+    padding-left: 0px;
+}
+
+
+
+input.sheet-trauma-check + span:hover{
+    color:#9c9c9c;
+}
+input.sheet-trauma-check:checked + span {
+    opacity:1 !important;
+  color: #ff0000 !important;
+}
+div.sheet-recoveryblurb.sheet-recoveryblurb2 span { color: #5e5e5e;}
+input.sheet-traumarow2 + span {
+    top:-8px !important;
+}
+input.sheet-traumarow2{
+        top: 342px;
+}
+div.sheet-stress4 span:last-child::after,div.sheet-stress4 span:nth-child(8)::after{
          content: "";
     padding-left: 0px
 }
+
+
+.sheet-4clock{display:none;}
+.sheet-6clock{display:none;}
+.sheet-8clock{display:none;}
+.sheet-12clock{display:none;}
+.sheet-4segment:checked ~ .sheet-4clock {
+    display: block;
+}
+.sheet-6segment:checked ~ .sheet-6clock {
+    display: block;
+}
+.sheet-8segment:checked ~ .sheet-8clock {
+    display: block;
+}
+.sheet-12segment:checked ~ .sheet-12clock {
+    display: block;
+}
+
+div.sheet-harmprogress input.sheet-trauma-check + span{
+    font-size:89%;
+        top: 0px;
+
+}
+input.sheet-trauma-check[type="radio"]{
+    opacity:0;
+    display:inline-block;
+          position: absolute;
+    width: 20px;
+           height: 11px;
+    margin: 0;
+    z-index: 10;
+}
+
+/* END TRAUMA DETAILS */
+
+
 .sheet-harmcolumn1{
     display:inline-block;
     box-sizing:border-box;
@@ -571,15 +695,16 @@ div.sheet-stress4 label:last-child::after,div.sheet-stress4 label:nth-child(8)::
     display:inline-block;
     overflow:hidden;
 }
-.sheet-armor .sheet-stresstooth {
+.sheet-armor .sheet-stresstooth3 {
     margin-left:10px;
 }
+
 .sheet-armorcaption{
     
     display: inline-block;
     position: relative;
     top: -9px;
-    right: -3px;
+     right: 3px;
     font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
     color: black;
     text-transform: uppercase;
@@ -706,191 +831,216 @@ input[type=checkbox]  {
 /* COIN BOXES LEFT-FILLED RADIO */
 
 
-label.sheet-coinbox2{
-    width: 9px;
+
+
+input.sheet-coinbox2[type="radio"],input.sheet-coinbox2[type="checkbox"]{
+       opacity: 0;
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    left: 2px;
+    top: -4px;
+    margin: -8px;
+}
+input.sheet-firstcoinbox2[type="radio"]{
+ margin-left:13px;   
+}
+input.sheet-coinbox2[type="radio"] + span::before,input.sheet-coinbox2[type="checkbox"] + span::before{   
+        width: 9px;
 	height: 9px;
     display:inline-block;
-	    margin: 0px 0px 0px 0px;
+	 margin: 0px 6px 0px 0px;
+    content:"";
 	position: relative;
    	   background-color:red;
     border:1px solid black;
     	cursor: pointer;
     padding:0;
 }
-label.sheet-coinbox2:last-child{
+input.sheet-coinboxlast[type="radio"] + span::before,input.sheet-coinboxlast[type="checkbox"] + span::before,{
     margin-right:0px !important;
 }
 
-
- div.sheet-coin1 > label:nth-child(4){
-        margin-left: 14px;
-}
-
-label.sheet-coinbox2:hover{
-    	filter: alpha(opacity=70);
+input.sheet-coinbox2[type="radio"]:hover + span::before,input.sheet-coinbox2[type="checkbox"]:hover + span::before{
+filter: alpha(opacity=70);
 	opacity: 0.7;
 }
-input.sheet-coinbox2[type=radio]:checked ~ label
-{    
-  	   background-color:white;
+
+input.sheet-coinbox2[type="radio"]:checked ~ input.sheet-coinbox2[type="radio"] + span::before{    
+    content: "";
+     background-color:white;
+}
+input.sheet-coinbox2[type="radio"]:checked + span::before,input.sheet-coinbox2[type="checkbox"]:checked + span::before{
+   
+    background-color:red;
+
 }
 
-input.sheet-coinbox2[type=radio]:checked + label{
-     	   background-color:red;
-}
+.sheet-loadcheckholder .sheet-coinbox {
 
-label.sheet-coinbox2zero{
-
-    width: 10px;
-    height: 13px;
-    position: absolute;
-    left: 383px;
-    top: 484px;
+    transform: rotate(45deg);
+    margin-left: 6px;
+        width: 7px;
+	height: 7px;
     border: none;
-    background-color: rgba(255,255,255,0);
-    background-image:url(http://i.imgur.com/b7fMDSq.png);
+        background-color: rgba(179,180,182,0);
 }
-input.sheet-coinbox2zero[type=radio]:checked + label{
-       
-    width: 10px;
-    height: 13px;
-    position: absolute;
-    left: 383px;
-    top: 484px;
-    border: none;
-    background-color: rgba(255,255,255,0);
-   background-image:url(http://i.imgur.com/b7fMDSq.png);
+
+.sheet-loadcheckholder input.sheet-coinbox2[type="checkbox"] + span::before {
+      width: 7px;
+    height: 7px;
+       top: 0px;
+    left: 10px;
+    background-color:white;
+}
+.sheet-loadcheckholder input.sheet-coinbox2[type="checkbox"]:checked + span::before {
+    background-color:red;
+}
+.sheet-loadcheckholder input.sheet-coinbox2[type="checkbox"] {
+      width: 8px;
+    height: 8px;
+    left: 9px;
+    top: -2px;
+    z-index: 10;
 }
 
 
 /* -------------- */
+/* STASH BOXES LEFT-RADIO SPANS */
 
-/* STASH BOXES LEFT-RADIO */
-
-input#sheet-stash1 + label,input#sheet-stash11 + label,input#sheet-stash21 + label,input#sheet-stash31 + label{
-    margin-left: 9px;
+input.sheet-stashbox3[type="radio"]{
+       opacity: 0;
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    left: 2px;
+    top: -4px;
+    margin: -8px;
 }
 
-label.sheet-stashbox2{
-    width: 10px;
-	height: 10px;
+input.sheet-stashbox3[type="radio"] + span::before{   
+        width: 9px;
+	height: 9px;
     display:inline-block;
-	    
-    margin: 0px 3px 0px 0px;
+	    margin: 0px 9px 0px 0px;
+    content:"";
 	position: relative;
-   	      background-color:#000000;
-    border:none;
+   	  background-color: black;
+    border:1px solid black;
     	cursor: pointer;
     padding:0;
 }
-label.sheet-stashbox2:last-child{
-    margin-right:0px !important;
+input.sheet-endstashbox[type="radio"]{ width:11px;height:13px; border:1px solid }
+input.sheet-indentbox[type="radio"]{     left: 8px;}
+input.sheet-indentbox[type="radio"] + span::before {    margin-left: 6px;}
+input.sheet-endstashbox[type="radio"] + span::before{ 
+    width: 10px;
+    height: 10px;
+    margin-right: 0px;
+    border: 1px solid black !important;
 }
 
-
-label.sheet-stashbox2:hover{
-    	filter: alpha(opacity=70);
+input.sheet-stashfirst[type="radio"]{   margin-left: 4px;}
+input.sheet-stashbox3[type="radio"]:hover + span::before{
+filter: alpha(opacity=70);
 	opacity: 0.7;
 }
-input.sheet-stashbox2[type=radio]:checked ~ label
-{    
-  	   background-color:#c6c7c9;
+
+input.sheet-stashbox3[type="radio"]:checked ~ input.sheet-stashbox3[type="radio"] + span::before{    
+    content: "";
+        background-color: #c6c7c9;
+       border:1px solid #c6c7c9;
+}
+input.sheet-stashbox3[type="radio"]:checked + span::before{
+   
+    background-color:black;
+       border:1px solid black;
+
+}
+input.sheet-coinbox2zero{
+  left: 8px !important;
+    margin-left: -8px !important;
+    z-index:10 !important;
 }
 
-input.sheet-stashbox2[type=radio]:checked + label{
-     	   background-color:#000000;
-}
-
-input#sheet-stash10 + label,input#sheet-stash20 + label,input#sheet-stash30 + label,input#sheet-stash40 + label{
-        border: 1px solid black;
-}
-input#sheet-stash10[type=radio]:checked + label,input#sheet-stash20[type=radio]:checked + label,input#sheet-stash30[type=radio]:checked + label,input#sheet-stash40[type=radio]:checked + label{
-            border: 1px solid black;
-}
-label.sheet-stashzero{
+input.sheet-coinbox2zero[type="radio"] + span::before{
 
     width: 10px;
     height: 13px;
     position: absolute;
-    left: 345px;
-    top: 509px;
+    left: 381px;
+    top: 484px;
     border: none;
     background-color: rgba(255,255,255,0);
     background-image:url(http://i.imgur.com/b7fMDSq.png);
 }
-input.sheet-stashzero[type=radio]:checked + label{
+input.sheet-coinbox2zero[type="radio"]:checked + span::before{
        
     width: 10px;
     height: 13px;
     position: absolute;
-    left: 345px;
-    top: 509px;
+    left: 381px;
+    top: 484px;
     border: none;
     background-color: rgba(255,255,255,0);
    background-image:url(http://i.imgur.com/b7fMDSq.png);
 }
 
-/* STASH BOXES */
 
-.sheet-stashbox {
+
+
+
+/* -------------- */
+
+/* COIN/STASH BOX ZERO BUTTONS */
+
+input.sheet-coinbox2zero{
+  left: 8px !important;
+    margin-left: -8px !important;
+    z-index:10 !important;
+}
+
+input.sheet-coinbox2zero[type="radio"] + span::before{
+
     width: 10px;
-	height: 10px;
-    display:inline-block;
-	    margin: 0px 4px 0px 0px;
-	position: relative;
-   background-color:#c6c7c9;
-    border:none;
+    height: 13px;
+    position: absolute;
+    left: 381px;
+    top: 484px;
+    border: none;
+    background-color: rgba(255,255,255,0);
+    background-image:url(http://i.imgur.com/b7fMDSq.png);
 }
-.sheet-stashbox:last-child{
-    margin-right:0px !important;
-    border:1px solid #c6c7c9;
-    background-color:white;
-}
-
-.sheet-stashbox label {
-	cursor: pointer;
-	position: absolute;
+input.sheet-coinbox2zero[type="radio"]:checked + span::before{
+       
     width: 10px;
-	height: 10px;
-    top:0px;
-
+    height: 13px;
+    position: absolute;
+    left: 381px;
+    top: 484px;
+    border: none;
+    background-color: rgba(255,255,255,0);
+   background-image:url(http://i.imgur.com/b7fMDSq.png);
+}
+input.sheet-stashbox3.sheet-coinbox2zero{
+        top: 0px !important;
+    left: -5px !important;
+}
+input.sheet-stashbox3.sheet-coinbox2zero[type="radio"] + span::before,input.sheet-stashbox3.sheet-coinbox2zero[type="radio"]:checked + span::before{
+         left: 337px;
+    top: 512px;
 }
 
-.sheet-stashbox label:after {
-	opacity: 0;
-    	filter: alpha(opacity=0);
-	content: '';
-	position: absolute;
-    width: 10px;
-	height: 10px;
-	   background-color:#000000;
-    
-}
 
-.sheet-stashbox:last-child label:after {
-    	opacity: 0;
-    	filter: alpha(opacity=0);
-	content: '';
-	position: absolute;
-    border:1px solid red;
-    background-color:red;
-    
-    width: 10px;
-    height: 10px;
-    top: -1px;
-    right: 9px;
-    
-}
-
-.sheet-stashbox label:hover::after {
-	filter: alpha(opacity=30);
-	opacity: 0.3;
-}
-
-.sheet-stashbox input[type=checkbox]:checked + label:after {
-	filter: alpha(opacity=100);
-	opacity: 1;
-}
+/* -------------- */
 
 .sheet-harmrow{
  display:inline-block;
@@ -991,6 +1141,11 @@ div.sheet-harmcolumn1 div:nth-child(3) div.sheet-harmdetails3{
     font-size: 80%;
     line-height: 0px;
 }
+.sheet-recoveryblurb2{
+    width: 100%;
+    padding-right: 50px;
+    margin-top: 6px;
+}
 .sheet-recoveryblurb span{
     font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
     color: black;
@@ -1003,6 +1158,9 @@ div.sheet-harmcolumn1 div:nth-child(3) div.sheet-harmdetails3{
     line-height: 119%;
     padding-right:3px;
 }
+
+
+
 .sheet-arrow-right{
     display:inline-block;
   width: 0; 
@@ -1010,6 +1168,22 @@ div.sheet-harmcolumn1 div:nth-child(3) div.sheet-harmdetails3{
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-left: 4px solid black;
+}
+.sheet-clockname{
+        width: 100%;
+        background-color: #d6d8d9;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 106%;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 119%;
 }
 .sheet-harmprogress{
         margin-top: 10px;
@@ -1027,13 +1201,6 @@ div.sheet-harmprogress label:nth-child(19)::after {
 input[type=radio]  {
   display:none;
 }
-.sheet-harmprogress input.sheet-trauma-check:checked + label,.sheet-harmprogress input.sheet-trauma-check + label{
-    color:red;
-}
-.sheet-harmprogress input.sheet-trauma-check:checked + label ~ input.sheet-trauma-check + label {
-    opacity:1 !important;
-  color: black;
-}
 /* 8 Piece Wheel */
 
 .sheet-harmrecoveryclock{
@@ -1045,34 +1212,119 @@ input[type=radio]  {
     width:44px;
     background-image:url('http://i.imgur.com/ji8z8CE.png');
 }
+.sheet-harmrecoveryclock2{
+      left: 327px;
+}
 
-.sheet-harmprogress input.sheet-recoverytracker0:checked + label  ~ .sheet-harmrecoveryclock {
+input.sheet-longoption {    width: 64px !important; }
+input.sheet-longoption  + span{text-transform:lowercase;}
+.sheet-harmprogress input.sheet-recoverytracker0:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/ji8z8CE.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker1:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker1:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/My9TlI6.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker2:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker2:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/5o93FQt.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker3:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker3:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/MR6r8J7.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker4:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker4:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/OADDLy1.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker5:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker5:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/XvnSlyZ.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker6:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker6:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/IKUp5Bv.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker7:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker7:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/tmBBDIN.png");
 }
-.sheet-harmprogress input.sheet-recoverytracker8:checked + label  ~ .sheet-harmrecoveryclock {
+.sheet-harmprogress input.sheet-recoverytracker8:checked + span  ~ .sheet-harmrecoveryclock {
   background-image:url("http://i.imgur.com/Y0eUmrG.png");
 }
+
+.sheet-harmprogress input.sheet-clock4_0:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/dafd6b0.png");
+}
+.sheet-harmprogress input.sheet-clock4_1:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/fM5WKMB.png");
+}
+.sheet-harmprogress input.sheet-clock4_2:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/P6Wx884.png");
+}
+.sheet-harmprogress input.sheet-clock4_3:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/C1mMa0r.png");
+}
+.sheet-harmprogress input.sheet-clock4_4:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/RZfr3By.png");
+}
+
+.sheet-harmprogress input.sheet-clock6_0:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/arZJyPv.png");
+}
+.sheet-harmprogress input.sheet-clock6_1:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/7l0Tihg.png");
+}
+.sheet-harmprogress input.sheet-clock6_2:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/MhIfWuq.png");
+}
+.sheet-harmprogress input.sheet-clock6_3:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/qwiaO8q.png");
+}
+.sheet-harmprogress input.sheet-clock6_4:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/8O2eCB5.png");
+}
+.sheet-harmprogress input.sheet-clock6_5:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/i7ivEnS.png");
+}
+.sheet-harmprogress input.sheet-clock6_6:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/DuYwNvN.png");
+}
+
+.sheet-harmprogress input.sheet-clock12_0:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/AzLi8pr.png");
+}
+.sheet-harmprogress input.sheet-clock12_1:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/pDCHycE.png");
+}
+.sheet-harmprogress input.sheet-clock12_2:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/JbRUclC.png");
+}
+.sheet-harmprogress input.sheet-clock12_3:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/jRyp6oP.png");
+}
+.sheet-harmprogress input.sheet-clock12_4:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/BHM56D9.png");
+}
+.sheet-harmprogress input.sheet-clock12_5:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/a4c1e5I.png");
+}
+.sheet-harmprogress input.sheet-clock12_6:checked + span  ~ .sheet-harmrecoveryclock {
+  background-image:url("http://i.imgur.com/IRGWvwH.png");
+}
+.sheet-harmprogress input.sheet-clock12_7:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/GbUzXr7.png");
+}
+.sheet-harmprogress input.sheet-clock12_8:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/krkIEho.png");
+}
+.sheet-harmprogress input.sheet-clock12_9:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/7vuvV92.png");
+}
+.sheet-harmprogress input.sheet-clock12_10:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/Q9xWEYx.png");
+}
+.sheet-harmprogress input.sheet-clock12_11:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/N29lNdB.png");
+}
+.sheet-harmprogress input.sheet-clock12_12:checked + span  ~ .sheet-harmrecoveryclock {
+ background-image:url("http://i.imgur.com/Y1Vd6bo.png");
+}
+
+
 .sheet-specialheader{
     
     box-sizing: border-box;
@@ -1091,6 +1343,10 @@ input[type=radio]  {
     padding-top: 11px;
     font-weight: 600;
     line-height: 0px;
+}
+.sheet-specialheader2{       
+    margin-top: 26px;
+    margin-bottom: 15px;
 }
 .sheet-specialability{
             padding-top: 2px;
@@ -1132,7 +1388,7 @@ input[type=radio]  {
 }
 
 /* SPECIAL ABILITY TICKBOXES */
-.sheet-abilitycheck input[type=checkbox]{
+.sheet-abilitycheck input[type="checkbox"],input.sheet-itemcheckbox, .sheet-attributedot input{
     display: inline-block;
     position: absolute;
     z-index: 100;
@@ -1146,7 +1402,8 @@ input[type=radio]  {
     
 }
 
-.sheet-abilitycheck label {
+.sheet-abilitycheck input[type="checkbox"] + span::before,input.sheet-itemcheckbox + span::before, .sheet-attributedot input + span::before{
+    	content: '';
 	cursor: pointer;
     top: 0px;
     width: 10px;
@@ -1161,27 +1418,55 @@ input[type=radio]  {
 
 }
 
-.sheet-abilitycheck label:after {
-	opacity: 0;
-    	filter: alpha(opacity=0);
+
+.sheet-abilitycheck input[type="checkbox"]:checked + span::before,input.sheet-itemcheckbox:checked + span::before,.sheet-attributedot input:checked + span::before{
 	content: '';
-	position: absolute;
+	position: relative;
+     top: 0px;
+    padding:0;
+    margin: 0px 0px 0px 2px;
     width: 10px;
 	height: 10px;
 	   background-color:red;
         border-radius: 30px;
 }
 
-.sheet-abilitycheck label:hover::after {
+
+.sheet-attributedot input, .sheet-attributedot input + span:before {
+        border-radius: 50px !important;
+   background-color:#c6c7c9;
+    border:none;
+       
+}
+.sheet-stashbox.sheet-attributedot:last-child{
+    margin-right:0px !important;
+}
+
+
+
+input.sheet-itemcheckbox{
+        width: 16px !important;
+    height: 15px !important;
+}
+input.sheet-itemcheckbox + span::before, input.sheet-itemcheckbox:checked + span::before{
+    top: 2px !important;
+    border-radius: 0px !important;
+        background-color: #d6d8d9 !important;
+    margin-right: 1px !important;
+}
+.sheet-regularitems input.sheet-itemcheckbox + span::before, .sheet-regularitems input.sheet-itemcheckbox:checked + span::before{
+      background-color: white !important;
+}
+
+input.sheet-itemcheckbox:checked + span::before, .sheet-regularitems input.sheet-itemcheckbox:checked + span::before{
+    background-color:red !important;
+}
+.sheet-abilitycheck input[type="checkbox"]:hover + span::before,input.sheet-itemcheckbox:hover + span::before  {
 	filter: alpha(opacity=30);
 	opacity: 0.3;
 }
 
-.sheet-abilitycheck input[type=checkbox]:checked + label:after {
-	filter: alpha(opacity=100);
-	opacity: 1;
-}
-.sheet-abilitycheck input[type=checkbox]:checked + label ~ input[type=text]{
+.sheet-abilitycheck input[type="checkbox"]:checked ~ input[type=text],input.sheet-itemcheckbox:checked ~ input[type=text]{
   color:red;
 }
 
@@ -1337,7 +1622,7 @@ div.itemcontrol{
     display:inline-block;
         vertical-align: top;
     padding-top: 4px;
-  padding-right: 10px;
+  padding-right: 6px;
         width: 75px;
 }
 .sheet-attributebtn{
@@ -1346,7 +1631,7 @@ div.itemcontrol{
     letter-spacing: 0px !important;
     text-shadow: none !important;
     font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
-    font-size: 107% !important;
+    font-size: 92% !important;
     font-weight: 800;
     line-height: 9px;
     border: none;
@@ -1386,6 +1671,7 @@ height: 22px;
     padding:4px;
     
     margin-right: 6px;
+      padding-right: 9px;
 }
 .sheet-attributedotsholder:first-child {
         height: 30px;
@@ -1394,16 +1680,15 @@ height: 22px;
     padding-top:11px;
 }
 .sheet-stashbox.sheet-attributedot {
-        border-radius: 50px;
-   background-color:#c6c7c9;
     border:none;
         margin: 0px 9px 0px 0px;
+    width: 10px;
+    display: inline-block;
+      
 }
 .sheet-stashbox.sheet-attributedot:last-child{
     margin-right:0px !important;
     border:none;
-    background-color:#c6c7c9;
-            border-radius: 50px;
 }
 
 
@@ -1696,7 +1981,7 @@ border: 0px solid white !important;
     font-weight:800;
     
 }
-.sheet-specialability input.sheet-friend{
+.sheet-specialability input.sheet-friend[type=text]{
     resize: vertical;
     display: inline-block;
     height: 50px;
@@ -1716,6 +2001,45 @@ border: 0px solid white !important;
         width: 137px;
     padding-left: 0px;
 }
+/* FRIEND CHECKS */
+
+input.sheet-friendcheck2 + span::before{
+    margin: 0px 0px 0px -1px !important;
+    border-radius: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
+    border-width: 0 5px 10px 5px !important;
+    border-color: transparent transparent #ffffff transparent !important;
+    background-color: #d6d8d9 !important;
+    top: -3px !important;
+}
+input.sheet-frienddown + span::before {
+        border-width: 10px 5px 0 5px !important;
+    border-color: #ffffff transparent transparent transparent !important;
+    top: 1px !important;
+        margin: 0px 0px 0px 3px !important;
+}
+input.sheet-friendup + span::before {
+         border-width: 0 5px 10px 5px !important;
+    border-color: transparent transparent #ffffff transparent;
+    top: -3px !important;
+}
+input.sheet-frienddown:checked + span::before {
+     border-color: #000000 transparent transparent transparent !important;
+}
+input.sheet-friendup:checked + span::before {
+     border-color: transparent transparent red transparent !important;
+}
+input.sheet-friendup:checked ~ input[type=text]{
+    color:red !important;
+}
+
+input.sheet-frienddown:checked ~ input[type=text]{
+    color:black !important;
+}
+
+
 label.sheet-friendcheck {
         margin: 0px 0px 0px -1px;
     
@@ -1819,24 +2143,7 @@ label.sheet-friendcheckdown{
 }
 
 
-.sheet-loadcheckholder .sheet-coinbox {
 
-    transform: rotate(45deg);
-    margin-left: 6px;
-        width: 7px;
-	height: 7px;
-}
-
-.sheet-loadcheckholder .sheet-coinbox label {
-        width: 7px;
-	height: 7px;
-
-}
-
-.sheet-loadcheckholder .sheet-coinbox label:after {
-        width: 7px;
-	height: 7px;
-}
 .sheet-italics{         font-family: Georgia,Times,"Times New Roman",serif;
       text-transform: lowercase;
     font-style: italic;
@@ -1898,20 +2205,20 @@ label.sheet-friendcheckdown{
 .sheet-abilitycheckshort{width:50%;}
 .sheet-playbookitems{background-color:#d6d8d9;}
 .sheet-floatingbar{
-       display: inline-block;
+           display: inline-block;
     position: relative;
-    width: 6px;
-    height: 2px;
+    width: 4px;
+    height: 3px;
     border-top: 2px solid #838587;
-        left: -167px;
+    left: -166px;
 }
 .sheet-floatingbar2{
-       display: inline-block;
+          display: inline-block;
     position: relative;
-    width: 6px;
-    height: 2px;
+    width: 5px;
+    height: 3px;
     border-top: 2px solid #838587;
-        left: -73px;
+    left: -72px;
 }
 .sheet-playbookitems .sheet-abilitycheck label{
         background-color: #d6d8d9;
