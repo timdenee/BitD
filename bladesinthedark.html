@@ -1,6 +1,6 @@
 <div class="sheet-topborder"></div>
-<div class="sheet-col60"><div class="sheet-bladeslogo"></div></div><div class="sheet-col40"><div class="sheet-playbooktitle"><div class="sheet-title"><input type="text" name="attr_playbook" value="playbook" class="" /></div><div class="sheet-desc"><textarea name="attr_playbookdesc"  cols="50" rows="3" value="A short playbook description"></textarea></div></div></div>
-<div class="sheet-col60 sheet-simple_input"><div class="sheet-col60"><input type="text" name="attr_name" class="" /><label for="attr_name" >Name</label></div><div class="sheet-col40"><input type="text" name="attr_alias" class="" /><label for="attr_alias" >Alias</label></div><div class="sheet-col100 sheet-fullwidth"><input type="text" name="attr_look" class="" /><label for="attr_look" >Look</label></div><div class="sheet-col60"><input type="text" name="attr_heritage" class="" /><label for="attr_heritage" >Heritage</label></div><div class="sheet-col40"><input type="text" name="attr_background" class="" /><label for="attr_background" >Background</label></div><div class="sheet-col100 sheet-fullwidth"><input type="text" name="attr_vice" class="" /><label for="attr_vice" >Vice / Purveyor</label></div><div class="sheet-col100 sheet-blackborder"><div class="sheet-stress1">Stress</div><div class="sheet-stress2">
+<div class="sheet-col60"><div class="sheet-col60 sheet-logoholder"><div class="sheet-bladeslogo"></div></div><div class="sheet-col40 sheet-simple_input"><input type="text" name="attr_crew" class="" /><label for="attr_crew" >Crew</label></div></div><div class="sheet-col40 sheet-toppad"><div class="sheet-playbooktitle"><div class="sheet-title"><input type="text" name="attr_playbook" value="playbook" class="" /></div><div class="sheet-desc"><textarea name="attr_playbookdesc"  cols="50" rows="3" >A short playbook description</textarea></div></div></div>
+<div class="sheet-col60 sheet-simple_input"><div class="sheet-col60"><input type="text" name="attr_name" class="" /><label for="attr_name" >Name</label></div><div class="sheet-col40"><input type="text" name="attr_alias" class="" /><label for="attr_alias" >Alias</label></div><div class="sheet-col100 sheet-fullwidth"><input type="text" name="attr_look" class="" /><label for="attr_look" >Look</label></div><div class="sheet-col60"><input type="text" name="attr_heritage" class="" /><label for="attr_heritage" >Heritage</label></div><div class="sheet-col40"><input type="text" name="attr_background" class="" /><label for="attr_background" >Background</label></div><div class="sheet-col100 sheet-fullwidth"><input type="text" name="attr_vice" class="" /><label for="attr_vice" >Vice / Purveyor</label><button type="roll" class="sheet-vicebutton sheet-rollbtn" value='&{template:bitd3}{{charname=@{character_name}}}{{stress=@{stress}}}{{insight=[[@{hunt1}+@{study1}+@{survey1}+@{tinker1}]]}}{{roll1avalue=[[@{hunt1}d6]]}}{{roll1bvalue=[[@{study1}d6]]}}{{roll1cvalue=[[@{survey1}d6]]}}{{roll1dvalue=[[@{tinker1}d6]]}}{{prowess=[[@{finesse1}+@{prowl1}+@{wreck1}+@{skirmish1}]]}}{{roll2avalue=[[@{finesse1}d6]]}}{{roll2bvalue=[[@{prowl1}d6]]}}{{roll2cvalue=[[@{skirmish1}d6]]}}{{roll2dvalue=[[@{wreck1}d6]]}}{{resolve=[[@{attune1}+@{command1}+@{consort1}+@{sway1}]]}}{{roll3avalue=[[@{attune1}d6]]}}{{roll3bvalue=[[@{command1}d6]]}}{{roll3cvalue=[[@{consort1}d6]]}}{{roll3dvalue=[[@{sway1}d6]]}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Indulge Vice</button></div><div class="sheet-col100 sheet-blackborder"><div class="sheet-stress1">Stress</div><div class="sheet-stress2">
     <input type="radio" value="0" name="attr_stress" class="sheet-stresstooth3 sheet-zero3 sheet-stresszero" checked /><span></span><!--
     --><input type="radio" value="1" name="attr_stress" class="sheet-stresstooth3" /><span></span><!--
     --><input type="radio" value="2" name="attr_stress" class="sheet-stresstooth3" /><span></span><!--
@@ -100,10 +100,29 @@
 	--><input type="radio" value="7" name="attr_playbook_xp" class="sheet-stresstooth3 sheet-regulartooth3" /><span></span><!--
 	--><input type="radio" value="8" name="attr_playbook_xp" class="sheet-stresstooth3 sheet-regulartooth3" /><span></span>
 </div><div class="sheet-markxpdesc"><ul>
-    <li>When you roll a desperate action.</li>
+    <li>Every time you roll a desperate action, mark xp in that action's attribute.</li>
+    <li class="sheet-nondot">At the end of each session, for each item below, mark 1 xp (in your playbook or an attribute) or 2xp if that item occurred multiple times.</li>
     <li><input type="text" value="Enter your playbook's specific way to mark XP here." name="attr_markxp"></li>
-    <li>At end of session, if you've expressed your beliefs, drives, heritage, or background. And also mark xp if you struggled with issues from your vice or traumas during the session.</li>
-    </ul></div></div></div><div class="sheet-col40"><div class="sheet-col50b"><div class="sheet-loadheader">Load<div class="sheet-loadcheckholder"><div class="sheet-coinbox">
+    <li>You expressed your beliefs, drives, heritage, or background.</li>
+    <li>You struggled with issues from your vice or traumas during the session.</li>
+    </ul></div><div class="sheet-col50a">
+<div class="sheet-gatherinfoheader">Teamwork</div>
+<div class="sheet-teamworkbox"><span class="sheet-boldspan">Assist</span> a teammate</div>
+<div class="sheet-teamworkbox">Lead a <span class="sheet-boldspan">group action</span></div>
+<div class="sheet-teamworkbox"><span class="sheet-boldspan">Protect</span> a teammate</div>
+<div class="sheet-teamworkbox"><span class="sheet-boldspan">Set up</span> a teammate</div>
+</div><div class="sheet-col50b">
+<div class="sheet-gatherinfoheader">Gather Information</div><div class="sheet-gatherinfo"><div class="sheet-markxpdesc"><ul>
+    <li>What do they intend to do?</li>
+    <li>How can I get them to [X]?</li>
+    <li>What are they really feeling?</li>
+    <li>What should I be worried about?</li>
+<li>Where's the weakness here?</li>
+<li>How can I find [X]?</li>
+<li>What's really going on here?</li>
+    </ul></div></div>
+
+</div></div></div><div class="sheet-col40"><div class="sheet-col50b"><div class="sheet-loadheader">Load<div class="sheet-loadcheckholder"><div class="sheet-coinbox">
 <input type="checkbox" value="2" name="attr_load1" class="sheet-coinbox2" /><span class="sheet-coinbox2"></span>
 </div><span class="sheet-loadnumber">3</span> Light</div><div class="sheet-loadcheckholder"><div class="sheet-coinbox">
 <input type="checkbox" value="3" name="attr_load2" class="sheet-coinbox2" /><span class="sheet-coinbox2"></span>
@@ -163,23 +182,17 @@
 
 </div>
 
-<div class="sheet-gatherinfoheader">Teamwork</div>
-<div class="sheet-teamworkbox"><span class="sheet-boldspan">Assist</span> another character</div>
-<div class="sheet-teamworkbox">Lead a <span class="sheet-boldspan">group action</span></div>
-<div class="sheet-teamworkbox"><span class="sheet-boldspan">Protect</span> a teammate</div>
-<div class="sheet-teamworkbox"><span class="sheet-boldspan">Set up</span> another character</div>
-
 <div class="sheet-gatherinfoheader">Planning &amp; Load</div><div class="sheet-gatherinfo">
-<div class="sheet-planningdesc">Choose a <span class="sheet-italicspan">plan</span>, provide the detail. <br/>Choose your <span class="sheet-italicspan">load</span> for the operation.</div>
-<div class="sheet-markxpdesc"><ul>
-    <li><span class="sheet-lispan">Assault plan:</span> Point of attack.</li>
-    <li><span class="sheet-lispan">Deception plan:</span> Method.</li>
-    <li><span class="sheet-lispan">Stealth plan:</span> Entry point.</li>
-    <li><span class="sheet-lispan">Occult plan:</span> Arcane power.</li>
-<li><span class="sheet-lispan">Social plan:</span> Social connection.</li>
-<li><span class="sheet-lispan">Transport plan:</span> Locations / Route.</li>
-    </ul></div></div>     
-</div><div class="sheet-col50a"><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/aRCtei7.png}}{{rolltypetext=Insight}}{{roll1value=[[@{hunt1}d6]]}}{{roll2value=[[@{study1}d6]]}}{{roll3value=[[@{survey1}d6]]}}{{roll4value=[[@{tinker1}d6]]}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Insight</button></div>
+<div class="sheet-planningdesc">Choose a plan, provide the <span class="sheet-italicspan">detail</span>. <br/>Choose your <span class="sheet-italicspan">load</span> for the operation.</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Assault:</span> Point of attack</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Occult:</span> Arcane power</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Deception:</span> Method</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Social:</span> Connection</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Stealth:</span> Entry point</div>
+    <div class="sheet-teamworkbox"><span class="sheet-boldspan">Transport:</span> Route</div>
+</div>
+
+</div><div class="sheet-col50a"><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/aRCtei7.png}}{{rolltypetext=Insight}}{{roll1value=[[@{hunt1}d6]]}}{{roll2value=[[@{study1}d6]]}}{{roll3value=[[@{survey1}d6]]}}{{roll4value=[[@{tinker1}d6]]}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Insight</button></div>
     <input type="radio" value="0" name="attr_insight_xp" class="sheet-stresstooth3 sheet-zero3 sheet-stresszero sheet-xpzero3 sheet-regulartooth3" checked /><span></span><!--
     --><input type="radio" value="1" name="attr_insight_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
 	--><input type="radio" value="2" name="attr_insight_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
@@ -195,7 +208,7 @@
 	<input type="checkbox" value="1" name="attr_hunt3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_hunt4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/Hf2zM1L.png}}{{rolltypetext=Hunt}}{{roll1value=[[@{hunt1}d6]]}}{{roll2value=[[@{hunt2}d6]]}}{{roll3value=[[@{hunt3}d6]]}}{{roll4value=[[@{hunt4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Hunt</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/Hf2zM1L.png}}{{rolltypetext=Hunt}}{{roll1value=[[@{hunt1}d6]]}}{{roll2value=[[@{hunt2}d6]]}}{{roll3value=[[@{hunt3}d6]]}}{{roll4value=[[@{hunt4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Hunt</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_study1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_study2" /><span></span>
@@ -203,7 +216,7 @@
 	<input type="checkbox" value="1" name="attr_study3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_study4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/sWoUh5J.png}}{{rolltypetext=Study}}{{roll1value=[[@{study1}d6]]}}{{roll2value=[[@{study2}d6]]}}{{roll3value=[[@{study3}d6]]}}{{roll4value=[[@{study4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Study</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/sWoUh5J.png}}{{rolltypetext=Study}}{{roll1value=[[@{study1}d6]]}}{{roll2value=[[@{study2}d6]]}}{{roll3value=[[@{study3}d6]]}}{{roll4value=[[@{study4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Study</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_survey1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_survey2" /><span></span>
@@ -211,7 +224,7 @@
 	<input type="checkbox" value="1" name="attr_survey3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_survey4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/mpUDldm.png}}{{rolltypetext=Survey}}{{roll1value=[[@{survey1}d6]]}}{{roll2value=[[@{survey2}d6]]}}{{roll3value=[[@{survey3}d6]]}}{{roll4value=[[@{survey4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Survey</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/mpUDldm.png}}{{rolltypetext=Survey}}{{roll1value=[[@{survey1}d6]]}}{{roll2value=[[@{survey2}d6]]}}{{roll3value=[[@{survey3}d6]]}}{{roll4value=[[@{survey4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Survey</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_tinker1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_tinker2" /><span></span>
@@ -219,7 +232,7 @@
 	<input type="checkbox" value="1" name="attr_tinker3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_tinker4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/4XTlsJC.png}}{{rolltypetext=Tinker}}{{roll1value=[[@{tinker1}d6]]}}{{roll2value=[[@{tinker2}d6]]}}{{roll3value=[[@{tinker3}d6]]}}{{roll4value=[[@{tinker4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Tinker</button></div></div><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/7PeppYz.png}}{{rolltypetext=Prowess}}{{roll1value=[[@{finesse1}d6]]}}{{roll2value=[[@{prowl1}d6]]}}{{roll3value=[[@{skirmish1}d6]]}}{{roll4value=[[@{wreck1}d6]]}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Prowess</button></div>
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/4XTlsJC.png}}{{rolltypetext=Tinker}}{{roll1value=[[@{tinker1}d6]]}}{{roll2value=[[@{tinker2}d6]]}}{{roll3value=[[@{tinker3}d6]]}}{{roll4value=[[@{tinker4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Tinker</button></div></div><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/7PeppYz.png}}{{rolltypetext=Prowess}}{{roll1value=[[@{finesse1}d6]]}}{{roll2value=[[@{prowl1}d6]]}}{{roll3value=[[@{skirmish1}d6]]}}{{roll4value=[[@{wreck1}d6]]}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Prowess</button></div>
      <input type="radio" value="0" name="attr_prowess_xp" class="sheet-stresstooth3 sheet-zero3 sheet-stresszero sheet-xpzero3 sheet-regulartooth3" checked /><span></span><!--
     --><input type="radio" value="1" name="attr_prowess_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
 	--><input type="radio" value="2" name="attr_prowess_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
@@ -235,7 +248,7 @@
 	<input type="checkbox" value="1" name="attr_finesse3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_finesse4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/4WuVKpL.png}}{{rolltypetext=Finesse}}{{roll1value=[[@{finesse1}d6]]}}{{roll2value=[[@{finesse2}d6]]}}{{roll3value=[[@{finesse3}d6]]}}{{roll4value=[[@{finesse4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Finesse</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/4WuVKpL.png}}{{rolltypetext=Finesse}}{{roll1value=[[@{finesse1}d6]]}}{{roll2value=[[@{finesse2}d6]]}}{{roll3value=[[@{finesse3}d6]]}}{{roll4value=[[@{finesse4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Finesse</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_prowl1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_prowl2" /><span></span>
@@ -243,7 +256,7 @@
 	<input type="checkbox" value="1" name="attr_prowl3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_prowl4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/a8TEEyf.png}}{{rolltypetext=prowl}}{{roll1value=[[@{prowl1}d6]]}}{{roll2value=[[@{prowl2}d6]]}}{{roll3value=[[@{prowl3}d6]]}}{{roll4value=[[@{prowl4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Prowl</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/a8TEEyf.png}}{{rolltypetext=prowl}}{{roll1value=[[@{prowl1}d6]]}}{{roll2value=[[@{prowl2}d6]]}}{{roll3value=[[@{prowl3}d6]]}}{{roll4value=[[@{prowl4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Prowl</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_skirmish1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_skirmish2" /><span></span>
@@ -251,7 +264,7 @@
 	<input type="checkbox" value="1" name="attr_skirmish3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_skirmish4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/gJJNl73.png}}{{rolltypetext=skirmish}}{{roll1value=[[@{skirmish1}d6]]}}{{roll2value=[[@{skirmish2}d6]]}}{{roll3value=[[@{skirmish3}d6]]}}{{roll4value=[[@{skirmish4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Skirmish</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/gJJNl73.png}}{{rolltypetext=skirmish}}{{roll1value=[[@{skirmish1}d6]]}}{{roll2value=[[@{skirmish2}d6]]}}{{roll3value=[[@{skirmish3}d6]]}}{{roll4value=[[@{skirmish4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Skirmish</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_wreck1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_wreck2" /><span></span>
@@ -259,7 +272,7 @@
 	<input type="checkbox" value="1" name="attr_wreck3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_wreck4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/EHOIFOM.png}}{{rolltypetext=wreck}}{{roll1value=[[@{wreck1}d6]]}}{{roll2value=[[@{wreck2}d6]]}}{{roll3value=[[@{wreck3}d6]]}}{{roll4value=[[@{wreck4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Wreck</button></div></div><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/eIZr40h.png}}{{rolltypetext=Insight}}{{roll1value=[[@{attune1}d6]]}}{{roll2value=[[@{command1}d6]]}}{{roll3value=[[@{consort1}d6]]}}{{roll4value=[[@{sway1}d6]]}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Resolve</button></div>
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/EHOIFOM.png}}{{rolltypetext=wreck}}{{roll1value=[[@{wreck1}d6]]}}{{roll2value=[[@{wreck2}d6]]}}{{roll3value=[[@{wreck3}d6]]}}{{roll4value=[[@{wreck4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Wreck</button></div></div><div class="sheet-attribute"><div class="sheet-attributetitle"> <button type="roll" class="sheet-attributebtn" value='&{template:bitd2}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/eIZr40h.png}}{{rolltypetext=Insight}}{{roll1value=[[@{attune1}d6]]}}{{roll2value=[[@{command1}d6]]}}{{roll3value=[[@{consort1}d6]]}}{{roll4value=[[@{sway1}d6]]}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Resolve</button></div>
      <input type="radio" value="0" name="attr_resolve_xp" class="sheet-stresstooth3 sheet-zero3 sheet-stresszero sheet-xpzero3 sheet-regulartooth3" checked /><span></span><!--
     --><input type="radio" value="1" name="attr_resolve_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
 	--><input type="radio" value="2" name="attr_resolve_xp"  class="sheet-stresstooth3 sheet-regulartooth3"/><span></span><!--
@@ -275,7 +288,7 @@
 	<input type="checkbox" value="1" name="attr_attune3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_attune4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/wjmgeBL.png}}{{rolltypetext=attune}}{{roll1value=[[@{attune1}d6]]}}{{roll2value=[[@{attune2}d6]]}}{{roll3value=[[@{attune3}d6]]}}{{roll4value=[[@{attune4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Attune</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/wjmgeBL.png}}{{rolltypetext=attune}}{{roll1value=[[@{attune1}d6]]}}{{roll2value=[[@{attune2}d6]]}}{{roll3value=[[@{attune3}d6]]}}{{roll4value=[[@{attune4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Attune</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_command1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_command2" /><span></span>
@@ -283,7 +296,7 @@
 	<input type="checkbox" value="1" name="attr_command3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_command4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/i5oDHFv.png}}{{rolltypetext=command}}{{roll1value=[[@{command1}d6]]}}{{roll2value=[[@{command2}d6]]}}{{roll3value=[[@{command3}d6]]}}{{roll4value=[[@{command4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Command</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/i5oDHFv.png}}{{rolltypetext=command}}{{roll1value=[[@{command1}d6]]}}{{roll2value=[[@{command2}d6]]}}{{roll3value=[[@{command3}d6]]}}{{roll4value=[[@{command4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Command</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_consort1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_consort2" /><span></span>
@@ -291,7 +304,7 @@
 	<input type="checkbox" value="1" name="attr_consort3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_consort4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/bu0cPsL.png}}{{rolltypetext=consort}}{{roll1value=[[@{consort1}d6]]}}{{roll2value=[[@{consort2}d6]]}}{{roll3value=[[@{consort3}d6]]}}{{roll4value=[[@{consort4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Consort</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/bu0cPsL.png}}{{rolltypetext=consort}}{{roll1value=[[@{consort1}d6]]}}{{roll2value=[[@{consort2}d6]]}}{{roll3value=[[@{consort3}d6]]}}{{roll4value=[[@{consort4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Consort</button></div><div class="sheet-attributedotsholder"><div class="sheet-firstdotholder"><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_sway1" /><span></span>
 </div></div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_sway2" /><span></span>
@@ -299,20 +312,11 @@
 	<input type="checkbox" value="1" name="attr_sway3" /><span></span>
 </div><div class="sheet-stashbox sheet-attributedot">
 	<input type="checkbox" value="1" name="attr_sway4" /><span></span>
-</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/sD36C99.png}}{{rolltypetext=sway}}{{roll1value=[[@{sway1}d6]]}}{{roll2value=[[@{sway2}d6]]}}{{roll3value=[[@{sway3}d6]]}}{{roll4value=[[@{sway4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=[[?{Bonus dice|0|1}d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Sway</button></div></div><div class="sheet-bonusdie"><div class="sheet-bonusdieheader">Bonus Die</div><div class="sheet-bonusdie1">+</div><div class="sheet-bonusdie2"><span class="sheet-smallcaps">Push yourself</span> (take 2 stress) -or- accept a <span class="sheet-smallcaps">Devil's Bargain</span></div></div><div class="sheet-specialheader">Shady Friends</div><div class="sheet-abilitiesholder"><div class="sheet-specialability"><div class="sheet-abilitycheck">
+</div><button type="roll" class="sheet-attributebtn sheet-rollbtn" value='&{template:bitd}{{charname=@{character_name}}}{{rolltypeimage=http://i.imgur.com/sD36C99.png}}{{rolltypetext=sway}}{{roll1value=[[@{sway1}d6]]}}{{roll2value=[[@{sway2}d6]]}}{{roll3value=[[@{sway3}d6]]}}{{roll4value=[[@{sway4}d6]]}}{{position=?{Position|Risky|Controlled|Desperate}}} {{effect=?{Effect|Standard|Limited|Great}}}{{bonusdice=?{Bonus dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Sway</button></div></div><div class="sheet-bonusdie"><div class="sheet-bonusdieheader">Bonus Die</div><div class="sheet-bonusdie1">+</div><div class="sheet-bonusdie2"><span class="sheet-smallcaps">Push yourself</span> (take 2 stress) -or- accept a <span class="sheet-smallcaps">Devil's Bargain</span></div></div><div class="sheet-specialheader">Strange Friends</div><div class="sheet-abilitiesholder"><div class="sheet-specialability"><div class="sheet-abilitycheck">
 		<input type="checkbox" value="None" name="attr_friend1" class="sheet-friendcheck2 sheet-friendup" /><span></span><input type="checkbox" class="sheet-friendcheck2 sheet-frienddown" value="None" name="attr_friend1b" /><span></span>
     <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname1" class="sheet-friendcheck sheet-friendcheckdown" /></div></div><fieldset class="repeating_friends">  <div class="sheet-specialability"><div class="sheet-abilitycheck">
 		<input type="checkbox" value="None" name="attr_friend1" class="sheet-friendcheck2 sheet-friendup" /><span></span><input type="checkbox" class="sheet-friendcheck2 sheet-frienddown" value="None" name="attr_friend1b" /><span></span>
-    <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname2" class="sheet-friendcheck sheet-friendcheckdown" /></div></div></fieldset></div><div class="sheet-gatherinfoheader">Gather Information</div><div class="sheet-gatherinfo"><div class="sheet-markxpdesc"><ul>
-    <li>What do they intend to do?</li>
-    <li>How can I get them to [X]?</li>
-    <li>What are they really feeling?</li>
-    <li>What should I be worried about?</li>
-<li>Where's the weakness here?</li>
-<li>How can I find [X]?</li>
-<li>What's really going on here?</li>
-<li>Ask about a detail for a plan.</li>
-    </ul></div></div></div><div class="sheet-col100 sheet-col1002"><div class="sheet-specialheader sheet-specialheader2">Clocks</div><fieldset class="repeating_clocks"><div class="sheet-recoveryblurb sheet-recoveryblurb2"><input type="text" value="Clock Name" name="attr_clockname" class="sheet-clockname" ><br/><div class="sheet-harmprogress"><span>Size</span>
+    <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname2" class="sheet-friendcheck sheet-friendcheckdown" /></div></div></fieldset></div></div><div class="sheet-col100 sheet-col1002"><div class="sheet-specialheader sheet-specialheader2">Clocks</div><fieldset class="repeating_clocks"><div class="sheet-recoveryblurb sheet-recoveryblurb2"><input type="text" value="Clock Name" name="attr_clockname" class="sheet-clockname" ><br/><div class="sheet-harmprogress"><span>Size</span>
    <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-4segment" value="1" checked="true" ><span  class="sheet-trauma-check">4-segment</span>
    <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-6segment" value="2"><span  class="sheet-trauma-check">6-segment</span>
     <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-8segment" value="3"><span  class="sheet-trauma-check">8-segment</span>
@@ -373,7 +377,7 @@
             <div class="sheet-rolltablename">{{charname}}</div>
             <div class="sheet-rolltablerolls">Rolls</div>
             <div class="sheet-rolltabletitle">[{{rolltypetext}}]({{rolltypeimage}})</div>
-            <div class="sheet-rolltabledice">{{#rollGreater() roll1value 0}}{{roll1value}}<span class="sheet-comma">, </span>{{/rollGreater() roll1value 0}}{{#rollGreater() roll2value 0}}{{roll2value}}<span class="sheet-comma">, </span>{{/rollGreater() roll2value 0}}{{#rollGreater() roll3value 0}}{{roll3value}}<span class="sheet-comma">, </span>{{/rollGreater() roll3value 0}}{{#rollGreater() roll4value 0}}{{roll4value}}<span class="sheet-comma">, </span>{{/rollGreater() roll4value 0}}{{#rollGreater() bonusdice 0}}{{bonusdice}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}
+            <div class="sheet-rolltabledice">{{#rollGreater() roll1value 0}}{{roll1value}}<span class="sheet-comma">, </span>{{/rollGreater() roll1value 0}}{{#rollGreater() roll2value 0}}{{roll2value}}<span class="sheet-comma">, </span>{{/rollGreater() roll2value 0}}{{#rollGreater() roll3value 0}}{{roll3value}}<span class="sheet-comma">, </span>{{/rollGreater() roll3value 0}}{{#rollGreater() roll4value 0}}{{roll4value}}<span class="sheet-comma">, </span>{{/rollGreater() roll4value 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
                 {{#rollLess() roll1value 1}}{{#rollLess() roll2value 1}}{{#rollLess() roll3value 1}}{{#rollLess() roll4value 1}}{{#rollLess() bonusdice 1}}
                 <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
                 <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
@@ -388,12 +392,82 @@
             <div class="sheet-rolltablename">{{charname}}</div>
             <div class="sheet-rolltablerolls">Resists a Consequence With</div>
             <div class="sheet-rolltabletitle">[{{rolltypetext}}]({{rolltypeimage}})</div>
-            <div class="sheet-rolltabledice">{{#rollGreater() roll1value 0}}{{roll1value}}<span class="sheet-comma">, </span>{{/rollGreater() roll1value 0}}{{#rollGreater() roll2value 0}}{{roll2value}}<span class="sheet-comma">, </span>{{/rollGreater() roll2value 0}}{{#rollGreater() roll3value 0}}{{roll3value}}<span class="sheet-comma">, </span>{{/rollGreater() roll3value 0}}{{#rollGreater() roll4value 0}}{{roll4value}}<span class="sheet-comma">, </span>{{/rollGreater() roll4value 0}}{{#rollGreater() bonusdice 0}}{{bonusdice}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}
+            <div class="sheet-rolltabledice">{{#rollGreater() roll1value 0}}{{roll1value}}<span class="sheet-comma">, </span>{{/rollGreater() roll1value 0}}{{#rollGreater() roll2value 0}}{{roll2value}}<span class="sheet-comma">, </span>{{/rollGreater() roll2value 0}}{{#rollGreater() roll3value 0}}{{roll3value}}<span class="sheet-comma">, </span>{{/rollGreater() roll3value 0}}{{#rollGreater() roll4value 0}}{{roll4value}}<span class="sheet-comma">, </span>{{/rollGreater() roll4value 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
                 {{#rollLess() roll1value 1}}{{#rollLess() roll2value 1}}{{#rollLess() roll3value 1}}{{#rollLess() roll4value 1}}{{#rollLess() bonusdice 1}}
                 <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
                 <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
                 {{/rollLess() bonusdice 1}}{{/rollLess() roll4value 1}}{{/rollLess() roll3value 1}}{{/rollLess() roll2value 1}}{{/rollLess() roll1value 1}}
                 </div>
                 <div class="sheet-resistinstructions">Suffer <em>6 stress minus the highest die result.</em> When you roll a critical on resistance, clear 1 stress.</div>
+                </div>
+</rolltemplate>
+
+
+<rolltemplate class="sheet-rolltemplate-bitd3">
+            <div class="sheet-rolltableholder">
+            <div class="sheet-rolltablename">{{charname}} </div>
+            <div class="sheet-rolltablerolls">(who currently has {{stress}} stress) indulges</div>
+            <div class="sheet-rolltabletitle">[vice](http://i.imgur.com/eaNKZTO.png)</div>
+            <div class="sheet-rolltabledice">
+                
+                {{#rollLess() insight prowess}}{{#rollLess() insight resolve}}
+                {{#rollGreater() roll1avalue 0}}{{roll1avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1avalue 0}}{{#rollGreater() roll1bvalue 0}}{{roll1bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1bvalue 0}}{{#rollGreater() roll1cvalue 0}}{{roll1cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1cvalue 0}}{{#rollGreater() roll1dvalue 0}}{{roll1dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                {{#rollLess() roll1avalue 1}}{{#rollLess() roll1bvalue 1}}{{#rollLess() roll1cvalue 1}}{{#rollLess() roll1dvalue 1}}{{#rollLess() bonusdice 1}}
+                <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                {{/rollLess() bonusdice 1}}{{/rollLess() roll1dvalue 1}}{{/rollLess() roll1cvalue 1}}{{/rollLess() roll1bvalue 1}}{{/rollLess() roll1avalue 1}}
+               {{/rollLess() insight resolve}} {{/rollLess() insight prowess}}
+                
+                {{#rollLess() prowess insight}}{{#rollLess() prowess resolve}}
+                {{#rollGreater() roll2avalue 0}}{{roll2avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll2avalue 0}}{{#rollGreater() roll2bvalue 0}}{{roll2bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll2bvalue 0}}{{#rollGreater() roll2cvalue 0}}{{roll2cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll2cvalue 0}}{{#rollGreater() roll2dvalue 0}}{{roll2dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll2dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                {{#rollLess() roll2avalue 1}}{{#rollLess() roll2bvalue 1}}{{#rollLess() roll2cvalue 1}}{{#rollLess() roll2dvalue 1}}{{#rollLess() bonusdice 1}}
+                <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                {{/rollLess() bonusdice 1}}{{/rollLess() roll2dvalue 1}}{{/rollLess() roll2cvalue 1}}{{/rollLess() roll2bvalue 1}}{{/rollLess() roll2avalue 1}}
+               {{/rollLess() prowess resolve}} {{/rollLess() prowess insight}}
+                
+                {{#rollLess() resolve insight}}{{#rollLess() resolve prowess}}
+                {{#rollGreater() roll3avalue 0}}{{roll3avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3avalue 0}}{{#rollGreater() roll3bvalue 0}}{{roll3bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3bvalue 0}}{{#rollGreater() roll3cvalue 0}}{{roll3cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3cvalue 0}}{{#rollGreater() roll3dvalue 0}}{{roll3dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                {{#rollLess() roll3avalue 1}}{{#rollLess() roll3bvalue 1}}{{#rollLess() roll3cvalue 1}}{{#rollLess() roll3dvalue 1}}{{#rollLess() bonusdice 1}}
+                <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                {{/rollLess() bonusdice 1}}{{/rollLess() roll3dvalue 1}}{{/rollLess() roll3cvalue 1}}{{/rollLess() roll3bvalue 1}}{{/rollLess() roll3avalue 1}}
+                {{/rollLess() resolve prowess}} {{/rollLess() resolve insight}}
+                
+                {{#rollTotal() resolve insight}}{{#rollTotal() resolve prowess}}
+                {{#rollGreater() roll3avalue 0}}{{roll3avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3avalue 0}}{{#rollGreater() roll3bvalue 0}}{{roll3bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3bvalue 0}}{{#rollGreater() roll3cvalue 0}}{{roll3cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3cvalue 0}}{{#rollGreater() roll3dvalue 0}}{{roll3dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                {{#rollLess() roll3avalue 1}}{{#rollLess() roll3bvalue 1}}{{#rollLess() roll3cvalue 1}}{{#rollLess() roll3dvalue 1}}{{#rollLess() bonusdice 1}}
+                <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                {{/rollLess() bonusdice 1}}{{/rollLess() roll3dvalue 1}}{{/rollLess() roll3cvalue 1}}{{/rollLess() roll3bvalue 1}}{{/rollLess() roll3avalue 1}}
+                {{/rollTotal() resolve prowess}} {{/rollTotal() resolve insight}}
+                
+                {{#rollGreater() resolve insight}}{{#rollTotal() insight prowess}}
+                     {{#rollGreater() roll1avalue 0}}{{roll1avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1avalue 0}}{{#rollGreater() roll1bvalue 0}}{{roll1bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1bvalue 0}}{{#rollGreater() roll1cvalue 0}}{{roll1cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1cvalue 0}}{{#rollGreater() roll1dvalue 0}}{{roll1dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll1dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                    {{#rollLess() roll1avalue 1}}{{#rollLess() roll1bvalue 1}}{{#rollLess() roll1cvalue 1}}{{#rollLess() roll1dvalue 1}}{{#rollLess() bonusdice 1}}
+                    <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                    <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                    {{/rollLess() bonusdice 1}}{{/rollLess() roll1dvalue 1}}{{/rollLess() roll1cvalue 1}}{{/rollLess() roll1bvalue 1}}{{/rollLess() roll1avalue 1}}
+                {{/rollTotal() insight prowess}}{{/rollGreater() resolve insight}}
+                
+                {{#rollGreater() insight resolve}}{{#rollTotal() resolve prowess}}
+                     {{#rollGreater() roll3avalue 0}}{{roll3avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3avalue 0}}{{#rollGreater() roll3bvalue 0}}{{roll3bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3bvalue 0}}{{#rollGreater() roll3cvalue 0}}{{roll3cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3cvalue 0}}{{#rollGreater() roll3dvalue 0}}{{roll3dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                    {{#rollLess() roll3avalue 1}}{{#rollLess() roll3bvalue 1}}{{#rollLess() roll3cvalue 1}}{{#rollLess() roll3dvalue 1}}{{#rollLess() bonusdice 1}}
+                    <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                    <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                    {{/rollLess() bonusdice 1}}{{/rollLess() roll3dvalue 1}}{{/rollLess() roll3cvalue 1}}{{/rollLess() roll3bvalue 1}}{{/rollLess() roll3avalue 1}}
+                {{/rollTotal() resolve prowess}}{{/rollGreater() insight resolve}}
+                
+                {{#rollGreater() prowess insight}}{{#rollTotal() insight resolve}}
+                     {{#rollGreater() roll3avalue 0}}{{roll3avalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3avalue 0}}{{#rollGreater() roll3bvalue 0}}{{roll3bvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3bvalue 0}}{{#rollGreater() roll3cvalue 0}}{{roll3cvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3cvalue 0}}{{#rollGreater() roll3dvalue 0}}{{roll3dvalue}}<span class="sheet-comma">, </span>{{/rollGreater() roll3dvalue 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+                    {{#rollLess() roll3avalue 1}}{{#rollLess() roll3bvalue 1}}{{#rollLess() roll3cvalue 1}}{{#rollLess() roll3dvalue 1}}{{#rollLess() bonusdice 1}}
+                    <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                    <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                    {{/rollLess() bonusdice 1}}{{/rollLess() roll3dvalue 1}}{{/rollLess() roll3cvalue 1}}{{/rollLess() roll3bvalue 1}}{{/rollLess() roll3avalue 1}}
+                {{/rollTotal() insight resolve}}{{/rollGreater() prowess insight}}
+                
+                </div>
+                <div class="sheet-resistinstructions"><em>Clear an amount of stress equal to the highest die result.</em> If the result of your vice roll means you clear more stress levels
+than you had marked, you <em>overindulge.</em></div>
                 </div>
 </rolltemplate>

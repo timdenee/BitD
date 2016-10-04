@@ -10,13 +10,14 @@
     height:100%;
 }
 .sheet-topborder{
-    width:100%;
+   /* width:100%;
     height:11px;
     padding:0;
     margin:0;
     background-image: url(http://i.imgur.com/TwanmVJ.png);
     background-size:cover;
-    
+    */
+    display:none;
 }
 
 .sheet-2col{
@@ -54,16 +55,17 @@ width:50%;
 .sheet-col100{display:inline-block;width:100%;margin:0;padding:0;vertical-align:top;}
 .sheet-col1002{margin-left:5px;width:97%;}
 .sheet-fullwidth input{width:100% !important;}
-
+.sheet-toppad{padding-left: 5px;    box-sizing: border-box;}
 .sheet-bladeslogo{
     height:63px;
-    width:100%;
-    background-image:url(http://i.imgur.com/aGyJR2S.png);
+    width:95%;
+    background-image:url(http://i.imgur.com/qaufkev.png);
     background-size: 102% auto;
     background-repeat: no-repeat;
 }
+.sheet-logoholder{height:50px;}
 .sheet-playbooktitle{
-    height:63px;
+    height:50px;
     width:100%;
     background-color:#d6d8d9;
 }
@@ -94,9 +96,9 @@ width:50%;
     font-size: 100%;
    
     letter-spacing: -2px;
-    line-height: 54px !important;
+    line-height: 50px !important;
     font-weight: 800;
-    color: #7f8184;
+    color: black;
     text-transform: uppercase;
     top: -11px;
     position: relative;
@@ -116,7 +118,7 @@ width:50%;
     line-height: 154%;
     font-weight: 800;
     box-sizing: border-box;
-    padding-top: 9px;
+    padding-top: 6px;
     color: #7f8184;
     
 }
@@ -276,7 +278,7 @@ input.sheet-stresstooth3[type="radio"],input.sheet-stresstooth3[type="checkbox"]
     padding:0;
     z-index: 1;
         left: 8px;
-top: -3px;
+top: -9px;
     margin:-8px;
 }
 input.sheet-stresstooth3[type="radio"] + span::before,input.sheet-stresstooth3[type="checkbox"] + span::before{
@@ -343,23 +345,23 @@ input.sheet-zero3[type="radio"]:checked + span::before{
 input.sheet-stresszero[type="radio"]{
      position:absolute;  
         left: 89px;
-    top: 335px;
+    top: 313px;
 
 }
 input.sheet-traumazero[type="radio"]{
            position: absolute;
     left: 218px;
-    top: 348px;
+    top: 326px;
 }
 input.sheet-stresszero[type="radio"] + span::before,input.sheet-stresszero[type="radio"]:checked + span::before{
  position:absolute;   
         left: 80px;
-    top: 339px;
+    top: 317px;
 }
 input.sheet-traumazero[type="radio"] + span::before,input.sheet-traumazero[type="radio"]:checked + span::before{
      position: absolute;
     left: 209px;
-    top: 339px;
+    top: 317px;
 }
 input.sheet-xpzero3[type="radio"]{
     position: relative;
@@ -614,7 +616,7 @@ input.sheet-traumarow2 + span {
     top:-8px !important;
 }
 input.sheet-traumarow2{
-        top: 342px;
+        top: 320px;
 }
 div.sheet-stress4 span:last-child::after,div.sheet-stress4 span:nth-child(8)::after{
          content: "";
@@ -977,7 +979,7 @@ input.sheet-coinbox2zero[type="radio"] + span::before{
     height: 13px;
     position: absolute;
     left: 381px;
-    top: 484px;
+    top: 460px;
     border: none;
     background-color: rgba(255,255,255,0);
     background-image:url(http://i.imgur.com/b7fMDSq.png);
@@ -988,7 +990,7 @@ input.sheet-coinbox2zero[type="radio"]:checked + span::before{
     height: 13px;
     position: absolute;
     left: 381px;
-    top: 484px;
+    top: 460px;
     border: none;
     background-color: rgba(255,255,255,0);
    background-image:url(http://i.imgur.com/b7fMDSq.png);
@@ -1014,7 +1016,7 @@ input.sheet-coinbox2zero[type="radio"] + span::before{
     height: 13px;
     position: absolute;
     left: 381px;
-    top: 484px;
+    top: 460px;
     border: none;
     background-color: rgba(255,255,255,0);
     background-image:url(http://i.imgur.com/b7fMDSq.png);
@@ -1025,7 +1027,7 @@ input.sheet-coinbox2zero[type="radio"]:checked + span::before{
     height: 13px;
     position: absolute;
     left: 381px;
-    top: 484px;
+    top: 460px;
     border: none;
     background-color: rgba(255,255,255,0);
    background-image:url(http://i.imgur.com/b7fMDSq.png);
@@ -1036,7 +1038,7 @@ input.sheet-stashbox3.sheet-coinbox2zero{
 }
 input.sheet-stashbox3.sheet-coinbox2zero[type="radio"] + span::before,input.sheet-stashbox3.sheet-coinbox2zero[type="radio"]:checked + span::before{
          left: 337px;
-    top: 512px;
+    top: 488px;
 }
 
 
@@ -1574,6 +1576,13 @@ div.itemcontrol{
       top: .25em;
       left: 0;
     }
+.sheet-markxpdesc li.sheet-nondot{
+    font-style: normal;
+    padding-left:0;
+}
+.sheet-markxpdesc li.sheet-nondot:after{
+    display:none;
+}
 .sheet-markxpdesc input{
          border-bottom: none;
     font-family: Georgia,Times,"Times New Roman",serif;
@@ -1729,10 +1738,43 @@ height: 22px;
     top: -1px;
     left: 2px;
 }
+.sheet-vicebutton{
+    letter-spacing: 0px !important;
+    text-shadow: none !important;
+    background-image: none;
+    color: #616161 !important;
+    border-radius: 0;
+    border-color: #b3b4b6 !important;
+    box-shadow: none;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif !important;
+    font-size: 97% !important;
+    content: ''!important;
+    position: absolute;
+        top: 235px;
+    left: 405px;
+    font-weight: 600!important;
+    background-color: white !important;
+    font-variant: normal !important;
+    padding: 4px !important;
+    text-transform:none !important;
+}
+.charsheet button.sheet-vicebutton:hover{
+        color: #020202 !important;
+    border-color: #020202 !important;
+
+}
+.charsheet button.sheet-vicebutton:before{
+    content:"" !important;
+}
 
 /* ROLL TEMPLATES */
 .sheet-rolltemplate-bitd .sheet-rolltableholder{
-            margin-left: -42px;
+      margin-left: -45px;
     margin-right: -1px;
     background-image:url(http://i.imgur.com/tGbnc6O.gif);
     width:299px;
@@ -1770,16 +1812,18 @@ padding-left: 32px;
     padding-top: 22px;
 }
 .sheet-rolltemplate-bitd .sheet-rolltabledice{
-    height: 27px;
-    padding-top: 61px;
+       height: 27px;
+    padding-top: 41px;
     padding-left: 30px;
-        font-family: Georgia,Times,"Times New Roman",serif;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    font-family: Georgia,Times,"Times New Roman",serif;
     color: white;
     text-transform: uppercase;
-    font-size: 200%;
-    letter-spacing: 1px;
+    font-size: 137%;
+    letter-spacing: 0px;
     font-weight: 800;
-    line-height: 0px;
+    line-height: 20px;
     
 }
 .sheet-rolltemplate-bitd .sheet-rolltableposition,.sheet-rolltemplate-bitd .sheet-rolltableeffect{
@@ -1809,15 +1853,15 @@ border: 0px solid white !important;
     display:none;
 }
 .sheet-rolltemplate-bitd .sheet-zerodice1{
-           position: relative;
-    top: -6px;
-    font-size: 90%;
+        position: relative;
+    top: 4px;
+    font-size: 103%;
     text-shadow: 0px 0px 6px rgb(255, 158, 0);
     color: #ffffff;
 }
 .sheet-rolltemplate-bitd .sheet-zerodice2{
         line-height: 100%;
-    font-size: 42%;
+    font-size: 67%;
     font-style: italic;
     text-transform: none;
     font-weight: 400;
@@ -1831,7 +1875,7 @@ border: 0px solid white !important;
 /* RESIST TEMPLATE */
 
 .sheet-rolltemplate-bitd2 .sheet-rolltableholder{
-            margin-left: -42px;
+      margin-left: -45px;
     margin-right: -1px;
     background-image:url(http://i.imgur.com/0aMMISi.jpg);
     width:299px;
@@ -1872,17 +1916,22 @@ border: 0px solid white !important;
 }
 .sheet-rolltemplate-bitd2 .sheet-rolltabledice{
     height: 27px;
-    padding-top: 61px;
+   padding-top: 41px;
     padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
         font-family: Georgia,Times,"Times New Roman",serif;
     color: white;
     text-transform: uppercase;
-    font-size: 200%;
-    letter-spacing: 1px;
+    font-size: 137%;
+    letter-spacing: 0px;
     font-weight: 800;
-    line-height: 0px;
+        line-height: 20px;
         position: relative;
-    top: -10px;
+    top: -4px;
+    
+      
+
 }
 .sheet-rolltemplate-bitd2 img{
     height:22px;
@@ -1897,10 +1946,15 @@ border: 0px solid white !important;
 .sheet-rolltemplate-bitd2 .sheet-comma:last-child{
     display:none;
 }
+
+
+
+
+
 .sheet-rolltemplate-bitd2 .sheet-zerodice1{
            position: relative;
-    top: -4px;
-    font-size: 86%;
+    top: 4px;
+    font-size: 103%;
     font-family:serif;
     text-shadow: 0px 0px 6px rgb(9, 199, 208);
     color: #ffffff;
@@ -1910,12 +1964,12 @@ border: 0px solid white !important;
 }
 .sheet-rolltemplate-bitd2 .sheet-zerodice2{
         line-height: 100%;
-    font-size: 42%;
+    font-size: 67%;
     font-style: italic;
     text-transform: none;
     font-weight: 400;
     letter-spacing: 0;
-    padding-top: 16px;
+    padding-top: 8px;
     text-shadow: 0px 0px 6px rgb(9, 199, 208);
     color: #d8e4ef;
 }
@@ -1928,6 +1982,120 @@ border: 0px solid white !important;
 }
 
 .sheet-rolltemplate-bitd2 .sheet-resistinstructions em{
+    font-style:normal;
+    font-weight:800;
+}
+
+
+/* INDULGE VICE TEMPLATE */
+
+
+.sheet-rolltemplate-bitd3 .sheet-rolltableholder{
+       margin-left: -45px;
+    margin-right: -1px;
+    background-image:url(http://i.imgur.com/JRHeBtH.jpg);
+    width:299px;
+    height:258px;
+    font-variant-numeric: lining-nums;  
+}
+.sheet-rolltemplate-bitd3 .sheet-rolltablename{
+      font-family: serif;
+    color: #ffffff;
+    text-transform: none;
+    font-size: 110%;
+    letter-spacing: 0px;
+    padding-left: 28px;
+    font-weight: 400;
+    line-height: 0px;
+    height: 20px;
+    padding-top: 32px;
+    
+}
+.sheet-rolltemplate-bitd3 .sheet-rolltablerolls{
+        font-family: serif;
+    color: #ffffff;
+    text-transform: none;
+    font-size: 110%;
+    letter-spacing: 0px;
+   padding-left: 28px;
+    font-weight: 400;
+    line-height: 0px;
+    font-style: normal;
+    position: relative;
+    top: -5px;
+}
+.sheet-rolltemplate-bitd3 .sheet-rolltabletitle{
+        padding-left: 27px;
+    padding-top: 8px;
+    position: relative;
+    top: 5px;
+}
+.sheet-rolltemplate-bitd3 .sheet-rolltabledice{
+    height: 27px;
+   padding-top: 41px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+        font-family: Georgia,Times,"Times New Roman",serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 137%;
+    letter-spacing: 0px;
+    font-weight: 800;
+        line-height: 20px;
+        position: relative;
+    top: -4px;
+    
+      
+
+}
+.sheet-rolltemplate-bitd2 img{
+    height:22px;
+}
+.sheet-rolltemplate-bitd3 .inlinerollresult{
+border: 0px solid white !important;
+    background-color: rgba(158, 100, 81, 0);
+    font-weight: normal;
+        padding-left: 0;
+    position: relative;
+    }
+.sheet-rolltemplate-bitd3 .sheet-comma:last-child{
+    display:none;
+}
+
+
+.sheet-rolltemplate-bitd3 .sheet-zerodice1{
+           position: relative;
+    top: 4px;
+    font-size: 103%;
+    font-family:serif;
+    text-shadow: 0px 0px 6px rgb(9, 199, 208);
+    color: #ffffff;
+}
+.sheet-rolltemplate-bitd3 .sheet-zerodice1 .inlinerollresult{
+    top:0px;
+}
+.sheet-rolltemplate-bitd3 .sheet-zerodice2{
+        line-height: 100%;
+    font-size: 67%;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding-top: 8px;
+    text-shadow: 0px 0px 6px rgb(9, 199, 208);
+    color: #d8e4ef;
+}
+.sheet-rolltemplate-bitd3 .sheet-resistinstructions{
+       font-family: Georgia,Times,"Times New Roman",serif;
+        padding: 15px 56px 0px 27px;
+    color: #c9c9c9;
+    font-weight: 200;
+    font-size: 81%;
+    line-height: 119%;
+}
+
+.sheet-rolltemplate-bitd3 .sheet-resistinstructions em{
     font-style:normal;
     font-weight:800;
 }
@@ -2234,11 +2402,10 @@ label.sheet-friendcheckdown{
     padding: 4px !important;
 }
 .sheet-teamworkbox{
-    width:100%;
+    width:95%;
     padding:5px;
     margin-bottom:5px;
     box-sizing:border-box;
-    border-left:11px solid #898b8d;
     color: black;
     background-color:#d6d8d9;
     font-size: 89%;
