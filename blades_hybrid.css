@@ -1377,7 +1377,7 @@ input.sheet-trauma-check[type="checkbox"]{
     opacity:0;
     display:inline-block;
           position: absolute;
-    width: 40px;
+    width: 52px;
            height: 11px;
     margin: 0;
     z-index: 10;
@@ -1430,7 +1430,7 @@ input.sheet-traumarow2 + span {
     top:-8px !important;
 }
 input.sheet-traumarow2{
-        top: 320px;
+        top: 367px;
 }
 div.sheet-stress4 span:last-child::after,div.sheet-stress4 span:nth-child(8)::after{
          content: "";
