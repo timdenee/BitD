@@ -2444,7 +2444,7 @@ div.itemcontrol{
         vertical-align: top;
     padding-top: 4px;
   padding-right: 6px;
-        width: 75px;
+         width: 67px;
 }
 .sheet-attributebtn{
    
@@ -2550,7 +2550,7 @@ height: 22px;
     top: -1px;
     left: 2px;
 }
-.sheet-vicebutton{
+.sheet-vicebutton, .sheet-fortunebtn{
     letter-spacing: 0px !important;
     text-shadow: none !important;
     background-image: none;
@@ -2575,12 +2575,22 @@ height: 22px;
     padding: 4px !important;
     text-transform:none !important;
 }
-.charsheet button.sheet-vicebutton:hover{
+.sheet-fortunebtn{
+   width: 100%;
+        height: 38px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 0px !important;
+    margin-top: 10px !important;
+}
+.charsheet button.sheet-vicebutton:hover, .charsheet button.sheet-fortunebtn:hover{
         color: #020202 !important;
     border-color: #020202 !important;
 
 }
-.charsheet button.sheet-vicebutton:before{
+.charsheet button.sheet-vicebutton:before,.charsheet button.sheet-fortunebtn:before{
     content:"" !important;
 }
 
@@ -2911,6 +2921,125 @@ border: 0px solid white !important;
     font-style:normal;
     font-weight:800;
 }
+
+/* FORTUNE TEMPLE */ 
+
+.sheet-rolltemplate-bitd4 .sheet-rolltableholder{
+      margin-left: -45px;
+    margin-right: -1px;
+    background-image:url(http://i.imgur.com/jYgw79y.jpg);
+    background-position:bottom right;
+    background-repeat:no-repeat;
+    background-color:white;
+    width:299px;
+        height: auto;
+    min-height: 250px;
+    font-variant-numeric: lining-nums;  
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltablename{
+    
+    font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
+    color: #303032;
+    text-transform: uppercase;
+    font-size: 103%;
+    letter-spacing: 1px;
+padding-left: 32px;
+    font-weight: 800;
+    line-height: 0px;
+        height: 20px;
+    padding-top: 32px;
+    
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltablerolls{
+    
+    font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
+    color: #303032;
+    text-transform: uppercase;
+    font-size: 103%;
+    letter-spacing: 1px;
+    padding-left: 32px;
+    font-weight: 800;
+    line-height: 0px;
+    font-style: italic;
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltabletitle{
+     padding-left: 30px;
+    padding-top: 22px;
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltabledice{
+       height: 27px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    font-family: Georgia,Times,"Times New Roman",serif;
+    color: #303032;
+    text-transform: uppercase;
+    font-size: 137%;
+    letter-spacing: 0px;
+    font-weight: 800;
+    line-height: 20px;
+    
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltableposition,.sheet-rolltemplate-bitd4 .sheet-rolltableeffect{
+    display: inline-block;
+    width: 49%;
+    box-sizing: border-box;
+    font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 82%;
+    letter-spacing: 1px;
+    padding-top: 20px;
+    padding-left: 29px;
+}
+.sheet-rolltemplate-bitd4 img{
+    height:31px;
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltableeffect{
+padding-left: 15px;
+}
+.sheet-rolltemplate-bitd4 .inlinerollresult{
+border: 0px solid white !important;
+    background-color: rgba(158, 100, 81, 0);
+    font-weight: normal;
+    }
+.sheet-rolltemplate-bitd4 .sheet-comma:last-child{
+    display:none;
+}
+.sheet-rolltemplate-bitd4 .sheet-zerodice1{
+        position: relative;
+    top: 4px;
+    font-size: 103%;
+      text-shadow: 0px 0px 6px rgb(136, 219, 215);
+    color: #1e1e1e;
+}
+.sheet-rolltemplate-bitd4 .sheet-zerodice2{
+        width: 60%;
+        line-height: 100%;
+    font-size: 67%;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding-top: 11px;
+      text-shadow: 0px 0px 6px rgb(136, 219, 215);
+    color: #1e1e1e;
+}
+.sheet-rolltemplate-bitd4 .sheet-rolltablenotes{
+       width: 46%;
+    line-height: 112%;
+    font-size: 98%;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #1e1e1e;
+    Padding-left: 29px;
+    font-family: Georgia, serif;
+}
+
 
 .sheet-bonusdie{
     width:100%;

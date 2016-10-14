@@ -323,7 +323,7 @@
 		<input type="checkbox" value="None" name="attr_friend1" class="sheet-friendcheck2 sheet-friendup" /><span></span><input type="checkbox" class="sheet-friendcheck2 sheet-frienddown" value="None" name="attr_friend1b" /><span></span>
     <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname1" class="sheet-friendcheck sheet-friendcheckdown" /></div></div><fieldset class="repeating_friends">  <div class="sheet-specialability"><div class="sheet-abilitycheck">
 		<input type="checkbox" value="None" name="attr_friend1" class="sheet-friendcheck2 sheet-friendup" /><span></span><input type="checkbox" class="sheet-friendcheck2 sheet-frienddown" value="None" name="attr_friend1b" /><span></span>
-    <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname2" class="sheet-friendcheck sheet-friendcheckdown" /></div></div></fieldset></div></div><div class="sheet-col100 sheet-col1002"><div class="sheet-specialheader sheet-specialheader2">Clocks</div><fieldset class="repeating_clocks"><div class="sheet-recoveryblurb sheet-recoveryblurb2"><input type="text" value="Clock Name" name="attr_clockname" class="sheet-clockname" ><br/><div class="sheet-harmprogress"><span>Size</span>
+    <input type="text" value="Friend name" class="sheet-abilityname1 sheet-friend" name="attr_friendname2" class="sheet-friendcheck sheet-friendcheckdown" /></div></div></fieldset></div><button type="roll"  class="sheet-fortunebtn sheet-rollbtn" value='&{template:bitd4}{{charname=@{character_name}}} {{notes=?{Notes| }}}{{bonusdice=?{Number of dice|0,[[0]]|1,[[1]]|2,[[2]]|3,[[3]]|4,[[4]]|5,[[5]]|6,[[6]]}}}{{bonus1=[[1d6]]}}{{bonus2=[[1d6]]}}{{bonus3=[[1d6]]}}{{bonus4=[[1d6]]}}{{bonus5=[[1d6]]}}{{bonus6=[[1d6]]}}{{zerodice1=[[1d6]]}}{{zerodice2=[[1d6]]}}'>Roll Fortune</button></div><div class="sheet-col100 sheet-col1002"><div class="sheet-specialheader sheet-specialheader2">Clocks</div><fieldset class="repeating_clocks"><div class="sheet-recoveryblurb sheet-recoveryblurb2"><input type="text" value="Clock Name" name="attr_clockname" class="sheet-clockname" ><br/><div class="sheet-harmprogress"><span>Size</span>
    <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-4segment" value="1" checked="true" ><span  class="sheet-trauma-check">4-segment</span>
    <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-6segment" value="2"><span  class="sheet-trauma-check">6-segment</span>
     <input type="radio" name="attr_clocksize" class="sheet-trauma-check sheet-longoption sheet-8segment" value="3"><span  class="sheet-trauma-check">8-segment</span>
@@ -1356,67 +1356,17 @@ than you had marked, you <em>overindulge.</em></div>
                 </div>
 </rolltemplate>
 
-
-<rolltemplate class="sheet-sheet-rolltemplate-bitd4">
-    <table>
-      {{#action}}
-      <tr>
-        <th>{{name}} uses</th>
-        <td class="sheet-sheet-result" rowspan="4">{{result}}</td>
-      </tr>
-      <tr>
-        <td class="sheet-sheet-subheader">{{action}}</td>
-        
-      </tr>
-      <tr><td class="sheet-sheet-position">{{position}} Position</td></tr>
-      <tr>
-        <td class="sheet-sheet-effect">{{effect}} Effect</td>
-        
-      </tr>
-      {{/action}}
-
-      {{#fortune}}
-      <tr>
-        <th>{{name}} tests fortune</th>
-        <td class="sheet-sheet-result" rowspan="3">{{result}}</td>  
-      </tr>
-      <tr>
-        <td class="sheet-sheet-fortune">{{fortune}}</td>
-
-      </tr>
-      <tr>
-        <td class="sheet-sheet-note">{{note}}</td>
-        
-      </tr>
-      {{/fortune}}
-
-      {{#vice}}
-      <tr>
-        <th>{{name}} indulges in Vice</th>
-        <td class="sheet-sheet-result" rowspan="3">{{result}}</td>  
-      </tr>
-      <tr>
-            <th>through {{vice}}</th>
-      </tr>
-      <tr>
-        <td class="sheet-sheet-fortune">and clears stress:</td>  
-      </tr>
-      {{/vice}}
-
-      {{#resist}}
-      <tr>
-        <th>{{name}} resists stress</th>
-        <td class="sheet-sheet-result" rowspan="3">{{stress}}</td>
-      </tr>
-      <tr>
-        <th>with {{resist}}</th>
-        
-      </tr>
-      <tr>
-        <td class="sheet-sheet-stress">and takes:</td>
-        
-      </tr>
-      {{/resist}}
-      
-    </table>
+<rolltemplate class="sheet-rolltemplate-bitd4">
+            <div class="sheet-rolltableholder">
+            <div class="sheet-rolltablename">{{charname}}</div>
+            <div class="sheet-rolltablerolls">Rolls</div>
+            <div class="sheet-rolltabletitle">[fortune](http://i.imgur.com/1gkCarn.png)</div>
+            <div class="sheet-rolltabledice">{{#rollGreater() roll1value 0}}{{roll1value}}<span class="sheet-comma">, </span>{{/rollGreater() roll1value 0}}{{#rollGreater() roll2value 0}}{{roll2value}}<span class="sheet-comma">, </span>{{/rollGreater() roll2value 0}}{{#rollGreater() roll3value 0}}{{roll3value}}<span class="sheet-comma">, </span>{{/rollGreater() roll3value 0}}{{#rollGreater() roll4value 0}}{{roll4value}}<span class="sheet-comma">, </span>{{/rollGreater() roll4value 0}}{{#rollGreater() bonusdice 0}}{{bonus1}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 0}}{{#rollGreater() bonusdice 1}}{{bonus2}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 1}}{{#rollGreater() bonusdice 2}}{{bonus3}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 2}}{{#rollGreater() bonusdice 3}}{{bonus4}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 3}}{{#rollGreater() bonusdice 4}}{{bonus5}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 4}}{{#rollGreater() bonusdice 5}}{{bonus6}}<span class="sheet-comma">, </span>{{/rollGreater() bonusdice 5}}
+               {{#rollLess() bonusdice 1}}
+                <div class="sheet-zerodice1">   {{zerodice1}}, {{zerodice2}}</div>
+                <div class="sheet-zerodice2">Zero Dice - take the lowest result above</div>
+                {{/rollLess() bonusdice 1}}
+                </div>
+                <div class="sheet-rolltablenotes">{{notes}}</div>
+                </div>
 </rolltemplate>
