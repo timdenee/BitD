@@ -959,7 +959,7 @@ width:50%;
     text-transform: uppercase;
     height: 150px;
     width: 136px;
-    background: none;
+    background: none; 
 }
 
 .sheet-simple_input input{
